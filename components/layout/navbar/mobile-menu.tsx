@@ -1,9 +1,13 @@
 'use client';
 
+import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Squash as Hamburger } from 'hamburger-react';
+import { Suspense } from 'react';
 // import { Menu } from 'lib/shopify/types';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
+import Search, { SearchSkeleton } from './search';
 
 export default function MobileMenu() {
   // ({ menu }: { menu: Menu[] })
@@ -32,13 +36,13 @@ export default function MobileMenu() {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="grid h-16 w-16 place-items-center rounded-full bg-white p-1 shadow-xl shadow-[#003EB6]/20 md:hidden"
+        className="grid h-16 w-16 place-items-center rounded-full bg-white p-1 shadow-xl shadow-[#2563eb]/20 md:hidden"
       >
         <Hamburger />
       </button>
-      {/* <Transition show={isOpen}>
+      <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">
-          <Transition.Child
+          <TransitionChild
             as={Fragment}
             enter="transition-all ease-in-out duration-300"
             enterFrom="opacity-0 backdrop-blur-none"
@@ -48,20 +52,20 @@ export default function MobileMenu() {
             leaveTo="opacity-0 backdrop-blur-none"
           >
             <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-          </Transition.Child>
-          <Transition.Child
+          </TransitionChild>
+          <TransitionChild
             as={Fragment}
             enter="transition-all ease-in-out duration-300"
-            enterFrom="translate-x-[-100%]"
+            enterFrom="translate-x-[100%]"
             enterTo="translate-x-0"
             leave="transition-all ease-in-out duration-200"
             leaveFrom="translate-x-0"
-            leaveTo="translate-x-[-100%]"
+            leaveTo="translate-x-[100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6 dark:bg-black">
+            <DialogPanel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6">
               <div className="p-4">
                 <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white"
+                  className="mb-4 flex size-14 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >
@@ -73,7 +77,7 @@ export default function MobileMenu() {
                     <Search />
                   </Suspense>
                 </div>
-                {menu.length ? (
+                {/* {menu.length ? (
                   <ul className="flex w-full flex-col">
                     {menu.map((item: Menu) => (
                       <li
@@ -86,12 +90,12 @@ export default function MobileMenu() {
                       </li>
                     ))}
                   </ul>
-                ) : null}
+                ) : null} */}
               </div>
-            </Dialog.Panel>
-          </Transition.Child>
+            </DialogPanel>
+          </TransitionChild>
         </Dialog>
-      </Transition> */}
+      </Transition>
     </>
   );
 }

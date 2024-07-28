@@ -1,6 +1,5 @@
 import Cart from '@/components/cart';
 import OpenCart from '@/components/cart/open-cart';
-import { getMenu } from '@/lib/shopify';
 import bookIcon from '@/public/book.svg';
 import paperClip from '@/public/paperclip.svg';
 import searchIcon from '@/public/search.svg';
@@ -10,19 +9,15 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 
-export default async function Navbar() {
-  const menu = await getMenu('next-js-frontend-header-menu');
-  const eShop = menu.find((item) => item.title === 'e-shop');
-  const news = menu.find((item) => item.title === 'επικαιρότητα');
-
+export default function Navbar() {
   const NAV_ITEMS = [
-    { href: eShop?.path, icon: bookIcon, label: eShop?.title },
-    { href: '/', icon: searchIcon, label: 'αναζήτηση' },
-    { href: news?.path, icon: paperClip, label: news?.title }
+    { href: 'search/all', icon: bookIcon, label: 'e-shop' },
+    { href: '#', icon: searchIcon, label: 'αναζήτηση' },
+    { href: 'blogs/news', icon: paperClip, label: 'επικαιρότητα' }
   ];
 
   return (
-    <nav className="flex items-center justify-between px-4 py-5 md:px-8 lg:px-16">
+    <nav className="flex items-center justify-between bg-[#f9f9fb] px-4 py-5 md:px-8 lg:px-16">
       <Logo />
       <ul className="flex gap-8 pl-12 text-base lg:gap-12 lg:text-lg xl:text-xl">
         {NAV_ITEMS.map((item) => (
@@ -39,7 +34,7 @@ export default async function Navbar() {
               </span>
               {item.label}
             </Link>
-            <span className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 transform bg-[#003EB6] transition-transform duration-300 group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 transform bg-blue-600 transition-transform duration-300 group-hover:scale-x-100"></span>
           </li>
         ))}
         <div className="flex gap-4">
