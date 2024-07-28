@@ -1,8 +1,11 @@
 import Navbar from 'components/layout/navbar';
-import { GeistSans } from 'geist/font/sans';
+import Topbar from 'components/layout/navbar/topbar';
 import { ensureStartsWith } from 'lib/utils';
+import { Manrope } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
+
+const manrope = Manrope({ subsets: ['latin', 'greek'] });
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -33,8 +36,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+    <html lang="en" className={manrope.className}>
+      <body>
+        <Topbar />
         <Navbar />
         <main>{children}</main>
       </body>

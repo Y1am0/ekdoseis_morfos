@@ -1,5 +1,5 @@
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
+import Image from 'next/image';
+import CartIcon from 'public/shoppingbag.svg';
 
 export default function OpenCart({
   className,
@@ -9,14 +9,22 @@ export default function OpenCart({
   quantity?: number;
 }) {
   return (
-    <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white">
-      <ShoppingCartIcon
-        className={clsx('h-4 transition-all ease-in-out hover:scale-110 ', className)}
-      />
+    <div className="relative text-base max-md:grid max-md:h-16 max-md:w-16 max-md:place-items-center max-md:rounded-full max-md:shadow-xl max-md:shadow-[#003EB6]/20 md:flex lg:gap-12 lg:text-lg xl:text-xl">
+      <div className="flex items-center gap-2 py-3 xl:gap-3">
+        <Image
+          src={CartIcon}
+          alt={'Cart Icon'}
+          width={64}
+          height={64}
+          className="h-auto w-8 md:w-5 xl:w-6"
+        />
+        <span className="hidden md:block">καλάθι</span>
+        <span className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 transform bg-[#003EB6] transition-transform duration-300 group-hover:scale-x-100"></span>
+      </div>
 
       {quantity ? (
-        <div className="absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded bg-blue-600 text-[11px] font-medium text-white">
-          {quantity}
+        <div className="absolute right-0 top-0 -mr-1 -mt-1 h-6 w-6 rounded-full bg-blue-600 text-xs font-medium text-white md:h-4 md:w-4 xl:-mr-2 xl:-mt-2 xl:h-5 xl:w-5">
+          <div className="grid h-full w-full place-items-center">{quantity}</div>
         </div>
       ) : null}
     </div>

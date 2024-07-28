@@ -1,15 +1,12 @@
 'use client';
 
-import { Dialog, Transition } from '@headlessui/react';
-import Link from 'next/link';
+import { Squash as Hamburger } from 'hamburger-react';
+// import { Menu } from 'lib/shopify/types';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Fragment, Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Menu } from 'lib/shopify/types';
-import Search, { SearchSkeleton } from './search';
-
-export default function MobileMenu({ menu }: { menu: Menu[] }) {
+export default function MobileMenu() {
+  // ({ menu }: { menu: Menu[] })
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -35,11 +32,11 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden dark:border-neutral-700 dark:text-white"
+        className="grid h-16 w-16 place-items-center rounded-full bg-white p-1 shadow-xl shadow-[#003EB6]/20 md:hidden"
       >
-        <Bars3Icon className="h-4" />
+        <Hamburger />
       </button>
-      <Transition show={isOpen}>
+      {/* <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">
           <Transition.Child
             as={Fragment}
@@ -94,7 +91,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
-      </Transition>
+      </Transition> */}
     </>
   );
 }
