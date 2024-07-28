@@ -23,7 +23,7 @@ function SubmitButton({
   if (!availableForSale) {
     return (
       <button aria-disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
+        Μη διαθέσιμο
       </button>
     );
   }
@@ -38,7 +38,7 @@ function SubmitButton({
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart
+        Προσθήκη στο καλάθι
       </button>
     );
   }
@@ -58,7 +58,7 @@ function SubmitButton({
       <div className="absolute left-0 ml-4">
         {pending ? <LoadingDots className="mb-3 bg-white" /> : <PlusIcon className="h-5" />}
       </div>
-      Add To Cart
+      Προσθήκη στο καλάθι
     </button>
   );
 }

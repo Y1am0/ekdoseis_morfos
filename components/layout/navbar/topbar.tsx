@@ -10,7 +10,7 @@ const LINKS = [
 ];
 
 const ICON_LINKS = [
-  { href: '/', icon: phoneIcon, label: '210 80 01 524' },
+  { href: 'tel:2108001524', icon: phoneIcon, label: '210 80 01 524' },
   { href: '/', icon: userIcon, label: 'Σύνδεση' }
 ];
 

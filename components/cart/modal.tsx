@@ -214,11 +214,11 @@ export default function CartModal({ cart: initialCart }: { cart: Cart | undefine
                               </div>
                             </Link>
                             <div className="flex h-16 flex-col justify-between">
-                              <Price
+                              {/* <Price
                                 className="flex justify-end space-y-2 text-right text-sm"
                                 amount={item.cost.totalAmount.amount}
                                 currencyCode={item.cost.totalAmount.currencyCode}
-                              />
+                              /> */}
                               <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200">
                                 <EditItemQuantityButton
                                   item={item}
@@ -242,7 +242,7 @@ export default function CartModal({ cart: initialCart }: { cart: Cart | undefine
                   </ul>
                   <div className="py-4 text-sm text-neutral-500">
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1">
-                      <p>Taxes</p>
+                      <p>ΦΠΑ</p>
                       <Price
                         className="text-right text-base text-black"
                         amount={cart.cost.totalTaxAmount.amount}
@@ -250,11 +250,11 @@ export default function CartModal({ cart: initialCart }: { cart: Cart | undefine
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1">
-                      <p>Shipping</p>
-                      <p className="text-right">Calculated at checkout</p>
+                      <p>Αποστολή</p>
+                      <p className="text-right">Υπολογίζεται στο στάδιο πληρωμής</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1">
-                      <p>Total</p>
+                      <p>Σύνολο</p>
                       <Price
                         className="text-right text-base text-black"
                         amount={cart.cost.totalAmount.amount}
@@ -286,7 +286,7 @@ function CheckoutButton({ cart }: { cart: Cart }) {
         type="submit"
         disabled={pending}
       >
-        {pending ? <LoadingDots className="bg-white" /> : 'Proceed to Checkout'}
+        {pending ? <LoadingDots className="bg-white" /> : 'Προς το ταμείο'}
       </button>
     </>
   );

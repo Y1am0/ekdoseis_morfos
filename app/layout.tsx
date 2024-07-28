@@ -36,7 +36,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={manrope.className}>
+    <html lang="en" className={`${manrope.className}`}>
       <body>
         <Topbar />
         <Navbar />
