@@ -19,7 +19,7 @@ export default function OpenCart({
           className="h-auto w-8 md:w-5 xl:w-6"
         />
         <span className="hidden md:block">καλάθι</span>
-        <span className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 transform bg-[#003EB6] transition-transform duration-300 group-hover:scale-x-100"></span>
+        <span className="absolute bottom-0 left-0 w-full md:h-1 md:origin-left md:scale-x-0 md:transform md:bg-[#003EB6] md:transition-transform md:duration-300 md:group-hover:scale-x-100"></span>
       </div>
 
       {quantity ? (
