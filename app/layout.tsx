@@ -40,7 +40,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body>
         <Topbar />
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-12">{children}</main>
       </body>
     </html>
   );

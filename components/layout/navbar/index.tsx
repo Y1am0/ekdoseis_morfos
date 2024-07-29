@@ -11,9 +11,9 @@ import MobileMenu from './mobile-menu';
 
 export default function Navbar() {
   const NAV_ITEMS = [
-    { href: 'search/all', icon: bookIcon, label: 'e-shop' },
+    { href: '/search/all', icon: bookIcon, label: 'e-shop' },
     { href: '#', icon: searchIcon, label: 'αναζήτηση' },
-    { href: 'blogs/news', icon: paperClip, label: 'επικαιρότητα' }
+    { href: '/blogs/news', icon: paperClip, label: 'επικαιρότητα' }
   ];
 
   return (
@@ -22,7 +22,10 @@ export default function Navbar() {
       <ul className="flex gap-8 pl-12 text-base lg:gap-12 lg:text-lg xl:text-xl">
         {NAV_ITEMS.map((item) => (
           <li key={item.label} className="group relative hidden md:flex">
-            <Link className="flex items-center gap-2 py-3 xl:gap-3" href={`${item.href}`}>
+            <Link
+              className="text-foreground flex items-center gap-2 py-3 xl:gap-3"
+              href={`${item.href}`}
+            >
               <span>
                 <Image
                   src={item.icon}

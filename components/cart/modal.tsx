@@ -241,14 +241,6 @@ export default function CartModal({ cart: initialCart }: { cart: Cart | undefine
                     })}
                   </ul>
                   <div className="py-4 text-sm text-neutral-500">
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1">
-                      <p>ΦΠΑ</p>
-                      <Price
-                        className="text-right text-base text-black"
-                        amount={cart.cost.totalTaxAmount.amount}
-                        currencyCode={cart.cost.totalTaxAmount.currencyCode}
-                      />
-                    </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1">
                       <p>Αποστολή</p>
                       <p className="text-right">Υπολογίζεται στο στάδιο πληρωμής</p>

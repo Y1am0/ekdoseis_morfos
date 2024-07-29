@@ -2,25 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 37, 99, 235;
-  --background-start-rgb: 249, 249, 251;
-  --background-end-rgb: 249, 249, 251;
-}
+@layer base {
+  :root {
+    --background: 240 8% 98%; /* #FBFBF9 */
+    --foreground: 224 78% 53%; /* #2463EB */
+    --card: 240 8% 98%; /* #FBFBF9 */
+    --card-foreground: 224 78% 53%; /* #2463EB */
+    --popover: 240 8% 98%; /* #FBFBF9 */
+    --popover-foreground: 224 78% 53%; /* #2463EB */
+    --primary: 224 78% 53%; /* #2463EB */
+    --primary-foreground: 0 0% 98%; /* #FBFBF9 */
+    --secondary: 246 81% 53%; /* #4924EB */
+    --secondary-foreground: 224 78% 53%; /* #2463EB */
+    --muted: 246 81% 53%; /* #4924EB */
+    --muted-foreground: 0 0% 35%; /* #636363 */
+    --accent: 246 81% 53%; /* #4924EB */
+    --accent-foreground: 224 78% 53%; /* #2463EB */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%; /* #FBFBF9 */
+    --border: 0 0% 35%; /* #636363 */
+    --input: 0 0% 35%; /* #636363 */
+    --ring: 0 0% 100% / 0%; /* Transparent ring */
+    --radius: 0rem;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
-}
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .dark {
+    --background: 240 8% 98%; /* #FBFBF9 */
+    --foreground: 224 78% 53%; /* #2463EB */
+    --card: 240 8% 98%; /* #FBFBF9 */
+    --card-foreground: 224 78% 53%; /* #2463EB */
+    --popover: 240 8% 98%; /* #FBFBF9 */
+    --popover-foreground: 224 78% 53%; /* #2463EB */
+    --primary: 224 78% 53%; /* #2463EB */
+    --primary-foreground: 0 0% 98%; /* #FBFBF9 */
+    --secondary: 246 81% 53%; /* #4924EB */
+    --secondary-foreground: 224 78% 53%; /* #2463EB */
+    --muted: 246 81% 53%; /* #4924EB */
+    --muted-foreground: 0 0% 35%; /* #636363 */
+    --accent: 246 81% 53%; /* #4924EB */
+    --accent-foreground: 224 78% 53%; /* #2463EB */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%; /* #FBFBF9 */
+    --border: 0 0% 35%; /* #636363 */
+    --input: 0 0% 35%; /* #636363 */
+    --ring: 0 0% 12.5%; /* #202020 */
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
   }
 }
 
-@supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading='lazy'] {
-    clip-path: inset(0.6px);
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
