@@ -53,12 +53,22 @@ module.exports = {
           '0%': { opacity: 0.2 },
           '20%': { opacity: 1 },
           '100% ': { opacity: 0.2 }
+        },
+        move: {
+          '0%': { transform: 'translateX(-200px)' },
+          '100%': { transform: 'translateX(200px)' }
+        },
+        loading: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 }
         }
       },
       animation: {
         fadeIn: 'fadeIn .3s ease-in-out',
         carousel: 'marquee 60s linear infinite',
-        blink: 'blink 1.4s both infinite'
+        blink: 'blink 1.4s both infinite',
+        move: 'move 5s linear infinite',
+        loading: 'loading 2.5s infinite linear'
       }
     }
   },

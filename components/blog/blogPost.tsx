@@ -1,14 +1,13 @@
-// components/BlogPost.tsx
 'use client';
 
-import { Article } from 'lib/shopify/types'; // Adjust the import path as necessary
+import { Article } from 'lib/shopify/types';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const BlogPost = () => {
-  const { id } = useParams();
   const [article, setArticle] = useState<Article | null>(null);
+  const { id } = useParams();
 
   useEffect(() => {
     if (id) {

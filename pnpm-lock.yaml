@@ -17,6 +17,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      framer-motion:
+        specifier: ^11.3.19
+        version: 11.3.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       geist:
         specifier: ^1.3.1
         version: 1.3.1(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -32,13 +35,19 @@ importers:
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
+      react-icons:
+        specifier: ^5.2.1
+        version: 5.2.1(react@18.3.1)
+      tailwind-merge:
+        specifier: ^2.4.0
+        version: 2.4.0
     devDependencies:
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.6)
+        version: 0.1.1(tailwindcss@3.4.7)
       '@tailwindcss/typography':
         specifier: ^0.5.13
-        version: 0.5.13(tailwindcss@3.4.6)
+        version: 0.5.13(tailwindcss@3.4.7)
       '@types/node':
         specifier: 20.14.12
         version: 20.14.12
@@ -53,10 +62,10 @@ importers:
         version: 1.0.0
       autoprefixer:
         specifier: ^10.4.19
-        version: 10.4.19(postcss@8.4.39)
+        version: 10.4.19(postcss@8.4.40)
       postcss:
-        specifier: ^8.4.39
-        version: 8.4.39
+        specifier: ^8.4.40
+        version: 8.4.40
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -64,8 +73,8 @@ importers:
         specifier: ^0.6.5
         version: 0.6.5(prettier@3.3.3)
       tailwindcss:
-        specifier: ^3.4.6
-        version: 3.4.6
+        specifier: ^3.4.7
+        version: 3.4.7
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -384,8 +393,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.0:
-    resolution: {integrity: sha512-Vb3xHHYnLseK8vlMJQKJYXJ++t4u1/qJ3vykuVrVjvdiOEhYyT1AuP4x03G8EnPmYvYOhe9T+dADTmthjRQMkA==}
+  electron-to-chromium@1.5.3:
+    resolution: {integrity: sha512-QNdYSS5i8D9axWp/6XIezRObRHqaav/ur9z1VzCDUCH1XIFOr9WQk5xmgunhsTpjjgDy3oLxO/WMOVZlpUQrlA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -414,6 +423,20 @@ packages:
 
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
+
+  framer-motion@11.3.19:
+    resolution: {integrity: sha512-+luuQdx4AsamyMcvzW7jUAJYIKvQs1KE7oHvKkW3eNzmo0S+3PSDWjBuQkuIP9WyneGnKGMLUSuHs8OP7jKpQg==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -651,8 +674,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.39:
-    resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
+  postcss@8.4.40:
+    resolution: {integrity: sha512-YF2kKIUzAofPMpfH6hOi2cGnv/HrUlfucspc7pDyvv7kGdqXrfj8SCl/t8owkEgKEuu8ZcRjSOxFxVLqwChZ2Q==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettier-plugin-tailwindcss@0.6.5:
@@ -719,6 +742,11 @@ packages:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
       react: ^18.3.1
+
+  react-icons@5.2.1:
+    resolution: {integrity: sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==}
+    peerDependencies:
+      react: '*'
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -806,8 +834,11 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwindcss@3.4.6:
-    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
+  tailwind-merge@2.4.0:
+    resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
+
+  tailwindcss@3.4.7:
+    resolution: {integrity: sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1026,17 +1057,17 @@ snapshots:
       '@swc/counter': 0.1.3
       tslib: 2.6.3
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.6)':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.7)':
     dependencies:
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.7
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.6)':
+  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.7
 
   '@tanstack/react-virtual@3.8.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -1082,14 +1113,14 @@ snapshots:
 
   arg@5.0.2: {}
 
-  autoprefixer@10.4.19(postcss@8.4.39):
+  autoprefixer@10.4.19(postcss@8.4.40):
     dependencies:
       browserslist: 4.23.2
       caniuse-lite: 1.0.30001643
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.1
-      postcss: 8.4.39
+      postcss: 8.4.40
       postcss-value-parser: 4.2.0
 
   balanced-match@1.0.2: {}
@@ -1107,7 +1138,7 @@ snapshots:
   browserslist@4.23.2:
     dependencies:
       caniuse-lite: 1.0.30001643
-      electron-to-chromium: 1.5.0
+      electron-to-chromium: 1.5.3
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
 
@@ -1159,7 +1190,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.0: {}
+  electron-to-chromium@1.5.3: {}
 
   emoji-regex@8.0.0: {}
 
@@ -1189,6 +1220,13 @@ snapshots:
       signal-exit: 4.1.0
 
   fraction.js@4.3.7: {}
+
+  framer-motion@11.3.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      tslib: 2.6.3
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   fsevents@2.3.3:
     optional: true
@@ -1349,28 +1387,28 @@ snapshots:
 
   pirates@4.0.6: {}
 
-  postcss-import@15.1.0(postcss@8.4.39):
+  postcss-import@15.1.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.39):
+  postcss-js@4.0.1(postcss@8.4.40):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.39
+      postcss: 8.4.40
 
-  postcss-load-config@4.0.2(postcss@8.4.39):
+  postcss-load-config@4.0.2(postcss@8.4.40):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
 
-  postcss-nested@6.2.0(postcss@8.4.39):
+  postcss-nested@6.2.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
       postcss-selector-parser: 6.1.1
 
   postcss-selector-parser@6.0.10:
@@ -1391,7 +1429,7 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
-  postcss@8.4.39:
+  postcss@8.4.40:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -1410,6 +1448,10 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+
+  react-icons@5.2.1(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react@18.3.1:
     dependencies:
@@ -1490,7 +1532,9 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwindcss@3.4.6:
+  tailwind-merge@2.4.0: {}
+
+  tailwindcss@3.4.7:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -1506,11 +1550,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.39
-      postcss-import: 15.1.0(postcss@8.4.39)
-      postcss-js: 4.0.1(postcss@8.4.39)
-      postcss-load-config: 4.0.2(postcss@8.4.39)
-      postcss-nested: 6.2.0(postcss@8.4.39)
+      postcss: 8.4.40
+      postcss-import: 15.1.0(postcss@8.4.40)
+      postcss-js: 4.0.1(postcss@8.4.40)
+      postcss-load-config: 4.0.2(postcss@8.4.40)
+      postcss-nested: 6.2.0(postcss@8.4.40)
       postcss-selector-parser: 6.1.1
       resolve: 1.22.8
       sucrase: 3.35.0

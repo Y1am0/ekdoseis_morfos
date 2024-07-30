@@ -13,11 +13,11 @@ export default function Navbar() {
   const NAV_ITEMS = [
     { href: '/search/all', icon: bookIcon, label: 'e-shop' },
     { href: '#', icon: searchIcon, label: 'αναζήτηση' },
-    { href: '/blogs/news', icon: paperClip, label: 'επικαιρότητα' }
+    { href: '/blog', icon: paperClip, label: 'επικαιρότητα' }
   ];
 
   return (
-    <nav className="flex items-center justify-between bg-[#f9f9fb] px-4 py-5 md:px-8 lg:px-16">
+    <nav className="bg-background/95 sticky top-0 z-50 flex items-center justify-between px-4 py-5 backdrop-blur-md md:px-8 lg:px-16">
       <Logo />
       <ul className="flex gap-8 pl-12 text-base lg:gap-12 lg:text-lg xl:text-xl">
         {NAV_ITEMS.map((item) => (
