@@ -263,3 +263,28 @@ export type ShopifyProductsOperation = {
     sortKey?: string;
   };
 };
+
+// types/article.ts
+export interface Article {
+  id: number;
+  title: string;
+  created_at: string;
+  body_html: string;
+  blog_id: number;
+  author: string;
+  user_id: number;
+  published_at: string | null;
+  updated_at: string;
+  summary_html: string;
+  template_suffix: string;
+  handle: string;
+  tags: string;
+  admin_graphql_api_id: string;
+  image?: {
+    created_at: string;
+    alt: string;
+    width: number;
+    height: number;
+    src: string;
+  };
+}

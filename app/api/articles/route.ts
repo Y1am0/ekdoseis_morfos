@@ -1,19 +1,13 @@
 import { NextResponse } from 'next/server';
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
-
-  if (!id) {
-    return NextResponse.json({ error: 'Blog ID is required' }, { status: 400 });
-  }
-
+export async function GET() {
   const headers = new Headers({
     'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_API_ACCESS_TOKEN!,
     'Content-Type': 'application/json',
   });
 
   const response = await fetch(
-    `https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/api/2024-04/blogs/${id}/articles.json`,
+    `https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/api/2024-04/blogs/107443388742/articles.json`,
     { headers }
   );
 
