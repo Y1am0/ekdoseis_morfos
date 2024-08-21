@@ -16,7 +16,7 @@ export default function OpenCart({
           alt={'Cart Icon'}
           width={64}
           height={64}
-          className="h-auto w-8 md:w-5 xl:w-6"
+          className="h-auto max-md:w-6 w-4 md:w-5 xl:w-6"
         />
         <span className="hidden md:block">καλάθι</span>
         <span className="absolute bottom-0 left-0 w-full md:h-1 md:origin-left md:scale-x-0 md:transform md:bg-[#2563eb] md:transition-transform md:duration-300 md:group-hover:scale-x-100"></span>

@@ -17,9 +17,20 @@ const BlogList = () => {
     fetchArticles();
   }, []);
 
+  const stripHtml = (html: string) => {
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    return div.textContent || div.innerText || '';
+  };
+
+  const createSnippet = (html: string) => {
+    const cleanText = stripHtml(html);
+    return cleanText.substring(0, 250) + '...';
+  };
+
   if (!articles.length)
     return (
-      <div className="bg-background flex min-h-screen w-full flex-col px-4 md:px-8">
+      <div className="bg-background flex min-h-screen w-full flex-col px-4 md:px-16 pt-12">
         <main className="mx-auto grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {Array.from({ length: 6 }).map((_, index) => (
             <div key={index} className="group w-full">
@@ -43,13 +54,13 @@ const BlogList = () => {
     );
 
   return (
-    <div className="bg-background flex min-h-screen w-full flex-col px-4 md:px-8">
+    <div className="bg-background flex min-h-screen w-full flex-col px-4 md:px-16 pt-12">
       <main className="mx-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {articles.map((article) => (
           <div key={article.id}>
             <CardComponent
               title={article.title}
-              snippet={article.summary_html || article.body_html.substring(0, 250) + '...'}
+              snippet={article.summary_html ? createSnippet(article.summary_html) : createSnippet(article.body_html)}
               image={article.image?.src || '/placeholder.svg'}
               link={`/blog/${article.id}`}
               date={article.published_at || 'Unknown'}

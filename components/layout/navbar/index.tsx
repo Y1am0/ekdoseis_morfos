@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-background/95 sticky top-0 z-50 flex items-center justify-between px-4 py-5 backdrop-blur-md md:px-8 lg:px-16">
+    <nav className="bg-background/85 sticky top-0 z-50 flex items-center justify-between px-4 py-5 backdrop-blur-md md:px-8 lg:px-16">
       <Logo />
       <ul className="flex gap-8 pl-12 text-base lg:gap-12 lg:text-lg xl:text-xl">
         {NAV_ITEMS.map((item) => (
@@ -30,9 +30,9 @@ export default function Navbar() {
                 <Image
                   src={item.icon}
                   alt={`${item.label} icon`}
-                  width={24}
-                  height={24}
-                  className="h-auto w-3 lg:w-5 xl:w-6"
+                  width={64}
+                  height={64}
+                  className="h-auto w-4 md:w-5 xl:w-6"
                 />
               </span>
               {item.label}

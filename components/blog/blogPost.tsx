@@ -24,13 +24,14 @@ const BlogPost = () => {
   if (!article) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className='max-w-[1536px] mx-auto 2xl:pt-10'>
       {article.image && (
         <Image
           src={article.image.src}
           alt={article.image.alt || article.title}
           width={article.image.width}
           height={article.image.height}
+          className={'w-full h-[450px] object-cover'}
         />
       )}
       <h1>{article.title}</h1>
